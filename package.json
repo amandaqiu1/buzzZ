@@ -1,44 +1,26 @@
 {
-  "name": "matt-shen-final-project",
+  "name": "buzzZ",
   "version": "1.0.0",
-  "description": "## Overview",
-  "main": "db.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nyu-csci-ua-0467-001-fall-2021/matt-shen-final-project.git"
+    "url": "git+https://github.com/amandaqiu1/buzzZ.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nyu-csci-ua-0467-001-fall-2021/matt-shen-final-project/issues"
+    "url": "https://github.com/amandaqiu1/buzzZ/issues"
   },
-  "homepage": "https://github.com/nyu-csci-ua-0467-001-fall-2021/matt-shen-final-project#readme",
+  "homepage": "https://github.com/amandaqiu1/buzzZ#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "connect-flash": "^0.1.1",
-    "connect-mongo": "^4.6.0",
-    "connect-mongodb-session": "^3.1.1",
-    "express": "*",
-    "express-session": "^1.17.2",
-    "hbs": "^4.2.0",
-    "memorystore": "^1.6.6",
-    "mongoose": "^6.0.13",
-    "passport": "^0.5.0",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0",
-    "sinon": "^11.1.2",
-    "start": "^5.1.0"
-  },
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "eslint": "^8.3.0",
-    "eslint-plugin-mocha": "^9.0.0",
-    "express": "^4.17.1",
-    "mocha": "^9.1.3",
-    "mongodb": "^4.1.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3",
+    "nodemon": "^2.0.15"
   }
 }

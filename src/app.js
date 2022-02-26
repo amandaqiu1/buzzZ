@@ -1,20 +1,20 @@
 require('./db');
-const express = require('../express');
-const mongoose = require('../mongoose');
-const bodyParser = require('../body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 
 const User = mongoose.model('User');
 const Internship = mongoose.model('Internship');
 
-const path = require('../path');
+const path = require('path');
 const app = express();
-const flash = require('../connect-flash');
+const flash = require('connect-flash');
 
-const session = require('../express-session');
-const MongoDBStore = require('../connect-mongodb-session')(session);
-const passport = require('../passport');
-const LocalStrategy = require('../passport-local').Strategy;
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 // require('mongoose/node_modules/mongodb');
 app.use(flash());
 

@@ -58,17 +58,22 @@ app.use(passport.session());
 
 app.get('/', checkAuthenticated, function(req, res) {
     
-    res.render('index', {user: req.user.username});
-    /*
-    Category.find({}, function(err, category){
+    Internship.find({user: req.user.username}, function(err, internship){
         if(err){
-            return;
+            throw err;
         }
         else{
-            res.render('index', {user: req.user.username, categories: category.filter(category => category.user === req.user.username)});
+            if(internship === null || internship === undefined){
+                res.render('index', {user: req.user.username});
+            }
+            else{
+                const temp =[];
+                internship.forEach(internship => temp.push(internship));
+                res.render('index', {internship: temp, user: req.user.username});
+            }
         }
     });
-    */
+    
 });
 app.post('/', checkAuthenticated, function(req, res) {
     const company = req.body.company;

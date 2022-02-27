@@ -79,8 +79,7 @@ app.post('/', checkAuthenticated, function(req, res) {
     const company = req.body.company;
     const position = req.body.position;
     const status = req.body.status;
-    const date = req.body.date;
-
+    const date = (req.body.date).substring(0,15);
     const obj = {
         user: req.user.username,
         company: company,

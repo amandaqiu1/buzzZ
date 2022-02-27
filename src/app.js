@@ -85,7 +85,7 @@ app.post('/', checkAuthenticated, function(req, res) {
         company: company,
         role: position,
         status: status,
-        date: dT
+        date: date
     };
     new Internship(obj).save(function(){
         if (req.session.internship === undefined) {

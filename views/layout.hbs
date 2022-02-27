@@ -12,15 +12,22 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">BuzzZ</a>
+  <a class="navbar-brand" href="/">BuzzZ</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
+     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+    </ul>
     <span class="navbar-text">
         {{#if user}}
-            {{user}}
-            <a href="/logout">Logout</a>
+          {{user}}   <button onclick= "location.href = '/logout'" class="btn btn-sm btn-outline-secondary" type="button" >Logout</button>
         {{/if}} 
     </span>
   </div>

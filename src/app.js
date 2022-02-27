@@ -79,14 +79,17 @@ app.post('/', checkAuthenticated, function(req, res) {
     const company = req.body.company;
     const position = req.body.position;
     const status = req.body.status;
-    const date = req.body.date;
+    var today = new Date();
+    console.log(typeof(req.body.date));
+    today = req.body.date;
+    const dT = today.toString();
 
     const obj = {
         user: req.user.username,
         company: company,
         role: position,
         status: status,
-        date: date
+        date: dT
     };
     new Internship(obj).save(function(){
         if (req.session.internship === undefined) {

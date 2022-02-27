@@ -79,11 +79,7 @@ app.post('/', checkAuthenticated, function(req, res) {
     const company = req.body.company;
     const position = req.body.position;
     const status = req.body.status;
-    var today = new Date();
-    console.log(typeof(req.body.date));
-    today = req.body.date;
-    const dT = today.toString();
-
+    const date = (req.body.date).substring(0,15);
     const obj = {
         user: req.user.username,
         company: company,

@@ -57,6 +57,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', checkAuthenticated, function(req, res) {
+    
     res.render('index', {user: req.user.username});
     /*
     Category.find({}, function(err, category){
@@ -68,6 +69,30 @@ app.get('/', checkAuthenticated, function(req, res) {
         }
     });
     */
+});
+app.post('/', checkAuthenticated, function(req, res) {
+    const company = req.body.company;
+    const position = req.body.position;
+    const status = req.body.status;
+    const date = req.body.date;
+
+    const obj = {
+        user: req.user.username,
+        company: company,
+        role: position,
+        status: status,
+        date: date
+    };
+    new Internship(obj).save(function(){
+        if (req.session.internship === undefined) {
+            req.session.internship = [];
+            req.session.internship.push(obj); 
+        } 
+        else {
+            req.session.internship.push(obj);
+        }
+    });
+    res.redirect('/');
 });
 
 app.get('/login', function(req, res) {
